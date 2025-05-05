@@ -7,8 +7,12 @@
 	"engines": {
 		"vscode": "^1.99.0"
 	},
-	"categories": ["Other"],
-	"activationEvents": ["onStartupFinished"],
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
@@ -79,6 +83,8 @@
 		"typescript": "^5.8.3"
 	},
 	"lint-staged": {
-		"src/*.{ts}": ["biome check . --fix --changed", "git add"]
+		"src/*.ts": [
+			"biome check . --fix"
+		]
 	}
 }
