@@ -8,11 +8,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": [
-			"node_modules",
-			"dist",
-			"esbuild.js"
-		]
+		"ignore": ["node_modules", "dist", "esbuild.js"]
 	},
 	"formatter": {
 		"enabled": true,
