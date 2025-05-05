@@ -1,4 +1,4 @@
-# Time-Based Theme Switcher
+# Themes Time Switcher
 
 This extension has not been packaged and published.
 
@@ -14,7 +14,7 @@ A Visual Studio Code extension that automatically switches themes (color and fil
 A sample configuration looks like this:
 
 ```json
-"timeBasedSwitcher": {
+"themesTimeSwitcher": {
     "mappings": {
       "18:00": {
         "color": "Firefox Dark"

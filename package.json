@@ -7,8 +7,12 @@
 	"engines": {
 		"vscode": "^1.99.0"
 	},
-	"categories": ["Other"],
-	"activationEvents": ["onStartupFinished"],
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
@@ -18,9 +22,9 @@
 			}
 		],
 		"configuration": {
-			"title": "Themes Time Based Switcher",
+			"title": "Themes Time Switcher",
 			"properties": {
-				"timeBasedSwitcher": {
+				"themesTimeSwitcher": {
 					"type": "object",
 					"properties": {
 						"mappings": {
@@ -79,6 +83,8 @@
 		"typescript": "^5.8.3"
 	},
 	"lint-staged": {
-		"src/*.ts": ["biome check . --fix"]
+		"src/*.ts": [
+			"biome check . --fix"
+		]
 	}
 }
