@@ -1,5 +1,7 @@
 # Time-Based Theme Switcher
 
+This extension has not been packaged and published.
+
 A Visual Studio Code extension that automatically switches themes (color and file icon themes) based on the time of day.
 
 ## Features
