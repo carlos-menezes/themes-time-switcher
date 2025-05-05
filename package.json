@@ -1,0 +1,82 @@
+{
+	"name": "themes-time-switcher",
+	"displayName": "themes-time-switcher",
+	"description": "A VSCode extension to switch themes based on time",
+	"publisher": "Carlos Menezes",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.99.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "themes-time-switcher.reload",
+				"title": "Themes Time Switcher: Reload Configuration"
+			}
+		],
+		"configuration": {
+			"title": "Themes Time Based Switcher",
+			"properties": {
+				"timeBasedSwitcher": {
+					"type": "object",
+					"properties": {
+						"mappings": {
+							"type": "object",
+							"patternProperties": {
+								"^([01]\\d|2[0-3]):[0-5]\\d$": {
+									"type": "object",
+									"properties": {
+										"color": {
+											"type": "string",
+											"description": "Color theme to switch to"
+										},
+										"fileIcon": {
+											"type": "string",
+											"description": "File icon theme to switch to"
+										}
+									},
+									"minProperties": 1
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "pnpm run package",
+		"compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
+		"watch": "npm-run-all -p watch:*",
+		"watch:esbuild": "node esbuild.js --watch",
+		"watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+		"package": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+		"check-types": "tsc --noEmit",
+		"lint": "eslint src",
+		"test": "vscode-test"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "20.x",
+		"@types/vscode": "^1.99.0",
+		"@typescript-eslint/eslint-plugin": "^8.31.1",
+		"@typescript-eslint/parser": "^8.31.1",
+		"@vscode/test-cli": "^0.0.10",
+		"@vscode/test-electron": "^2.5.2",
+		"esbuild": "^0.25.3",
+		"eslint": "^9.25.1",
+		"npm-run-all": "^4.1.5",
+		"typescript": "^5.8.3"
+	}
+}
